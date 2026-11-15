@@ -1,0 +1,23 @@
+a = 0.35;  b = a;          % plate size (m)
+p1 = 0.12; p2 = 0.23;      % cutout edges (p1 + p2 = a, centred square hole)
+d = 0.01;                  % mesh step
+
+w = @(x,y) cos(pi*x/a).*cos(pi*y/b);   % first mode shape
+
+% plate regions around the cutout: [xmin xmax ymin ymax]
+R = [0  p2  0   p1;    % bottom strip
+    p2 a   0   b;     % right strip
+    0  p2  p2  b;     % top strip
+    0  p1  p1  p2];   % left strip
+
+hold on
+for k = 1:size(R,1)
+    nx = round((R(k,2)-R(k,1))/d) + 1;
+    ny = round((R(k,4)-R(k,3))/d) + 1;
+    [x,y] = meshgrid(linspace(R(k,1),R(k,2),nx), linspace(R(k,3),R(k,4),ny));
+    surf(x, y, w(x,y))
+end
+hold off
+
+set(gca,'FontSize',13,'FontName','Times New Roman')
+view(30, 25)      % 3D view
