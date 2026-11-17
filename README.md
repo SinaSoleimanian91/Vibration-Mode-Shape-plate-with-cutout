@@ -7,8 +7,9 @@ When you run the script, a dialog box will prompt you for:
 * **c**: Cutout side length (m)
 * **d**: Mesh step size for resolution
 
+By inputting typical values given in lines 4-7, the following candish mode shape as the fundamental vibrating mode shape of the plate can be obtained:
 
-<img width="581" height="271" alt="FFF_Plate" src="https://github.com/user-attachments/assets/7ead6bac-f1ff-42e0-8318-730533874bf5" />
+<img width="519" height="279" alt="image" src="https://github.com/user-attachments/assets/0de7ccbf-a222-4712-ba24-177d0d15dde0" />
 
 
 /# Vibrations
